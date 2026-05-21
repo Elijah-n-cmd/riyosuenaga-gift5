@@ -1,0 +1,17 @@
+//<!-
+var dx_url = "http://www.dxlive.com";
+var jp_url = "http://www.dxlive.com";
+var jp_url_host = "www.dxlive.com";
+var mobile_url = "http://m.dxlive.com";
+var mobile_url_host = "m.dxlive.com";
+var ssl_mobile_url = "https://m.dxlive.com";
+var universal_chat_url = "http://chatstatic.dxlive.com";
+var universal_chat_url_host = "chatstatic.dxlive.com";
+var en_url = "http://en.dxlive.com";
+var ssl_url = "https://www.dxlive.com";
+var image_url = "//imageup.dxlive.com";
+var d2p_url = "https://secure.d2pass.com";
+var join_url = "https://www5.dtiserv3.com/cgi-bin/d2pjoin.fcgi";
+var vctp_url = "//aff-jp.dxlive.com";
+var domain = "dxlive.com";
+//-->

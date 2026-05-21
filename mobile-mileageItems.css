@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header,.contSec,#noticeSec{
+    width: 100%;
+}
+
+
+header{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+}
+
+header img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#mileageStore header{
+    aspect-ratio: 16/9;
+    background-image: url(//www.dxlive.com/img/performer/mileage/mileage_smp.gif);
+}
+
+#mileageStore header h1{
+    margin-right: auto;
+    text-align: center;
+    line-height:normal;
+    color: #696c48;
+    font-weight: bold;
+    font-size:small;
+    display: none;
+}
+
+#itemSec{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(149px, 1fr));
+    gap: 20px;
+}
+
+#profileSec{
+    float: none;
+}
+nav{
+    height: auto;
+    margin-bottom:70px;
+    background: #ecedea;
+    box-shadow:none;
+}
+
+.menu{
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 10px;
+    background:#ecedea;
+    /* background: linear-gradient(to bottom, #ecedea 0%, #f8f8f6 35%, #f8f8f6 65%, #ecedea 100%);
+        text-shadow: 1px 1px 1px #fff;
+
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, .19); */
+                /* border-left: 1px solid #cdcdcd;
+        border-right: 1px solid #cdcdcd;
+        border-bottom: 1px solid #cdcdcd;
+        box-sizing: border-box; */
+        position: relative;
+}
+
+.categorySec{
+    width: 50%;
+    text-align: center;
+}
+.categorySec label{
+    border: none;
+}
+
+.shoppingCartSec{
+    width: 50%;
+    text-align: center;
+}
+
+.shoppingCartSec label{
+    text-align: center;
+}
+
+
+.eachproduct{
+    width: 100%;
+    margin: auto;
+}
+
+#menu_bar01:checked ~ #links01 li, #menu_bar02:checked ~ #links02 li {
+    height: 60px;
+    opacity: 1;
+}
+
+#links02 dt span:nth-child(1){
+    white-space:pre-wrap;
+    width: auto;
+}
+
+.thumbnail a:link{
+    aspect-ratio: 1/1;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.producttext{
+    width: auto;
+}
+
+.btn-gift-enable{
+    margin-left: 0 !important;
+}
+
+footer{
+    width: 100%;
+
+}

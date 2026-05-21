@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Meiryo UI', メイリオ, Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS PGothic', Arial, Helvetica, sans-serif;
+  /* color: #373648; */
+  line-height: 160%;
+  color: #636363;
+  background-image: url(/img/performer/gift/bg_mileageGift.jpg);
+  background-color: #dfc9da;	
+}
+
+header {
+  width: 998px;
+  height: 133px;
+  margin: auto;
+  background-image: url(ttl.gif);
+}
+
+h1 {
+  margin-right: 30px;
+  font-size: 16px;
+  color: #FFF;
+  text-align: right;
+  font-weight: normal;
+  line-height: 133px;
+}
+
+.contSec {
+  width: 998px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fef5ff;
+  box-sizing: border-box;
+}
+
+nav {
+  width: auto;
+  height: 48px;
+  margin-bottom: 40px;
+  padding: 2px 14px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3px;
+  text-shadow: 1px 1px 1px #fff;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ecedea+0,f8f8f6+35,f8f8f6+65,ecedea+100 */
+  background: #ecedea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ecedea 0%, #f8f8f6 35%, #f8f8f6 65%, #ecedea 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ecedea 0%,#f8f8f6 35%,#f8f8f6 65%,#ecedea 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ecedea 0%,#f8f8f6 35%,#f8f8f6 65%,#ecedea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecedea', endColorstr='#ecedea',GradientType=0 ); /* IE6-9 */
+
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+  box-sizing: border-box;
+
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,.19);
+  box-shadow: 0px 0px 8px rgba(0,0,0,.19);
+  z-index: 1000;
+}
+
+#profileSec {
+  float: left;
+  line-height: 41px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #999999;
+}
+
+.profileImg {
+  display: inline-block;
+  width: 44px;
+  height: 41px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+#profileSec span {
+  font-size: 18px;
+  color: #ff66cc;
+}
+
+.menu {
+  display: flex;
+  right: 0;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.menu a {
+    display: block;
+    /* width: 98%; */
+    margin: 0 10px;
+    padding: 14px 15px;
+    margin: auto;
+    text-decoration: none;
+    color: #0070c9;
+    border-bottom: 1px solid #dadada;
+}
+
+.menu li:last-child a {
+  border-bottom: none;
+}
+
+.categorySec {
+  width: 210px;
+}
+
+.categorySec label {
+  border-left: 1px solid #0070c9;
+  border-right: 1px solid #0070c9;
+}
+
+.shoppingCartSec {
+  width: 242px;
+}
+
+.shoppingCartSec label {
+  text-align: right;
+}
+
+.shoppingCartSec label img {
+  margin-right: 4px;
+  vertical-align: bottom;
+}
+
+label {
+    display: block;
+    /* margin: 0 0 4px 0; */
+    /* padding : 15px; */
+    /* line-height: 1; */
+    margin-bottom: 20px;
+    padding: 0 0 0 18px;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: bold;
+    color :#0070c9;
+    cursor :pointer;
+}
+
+input {
+    display: none;
+}
+
+.menu ul {
+    width: 98%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ecedea+0,f8f8f6+35,f8f8f6+65,ecedea+100 */
+    background: #ecedea; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ecedea 0%, #f8f8f6 35%, #f8f8f6 65%, #ecedea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ecedea 0%,#f8f8f6 35%,#f8f8f6 65%,#ecedea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ecedea 0%,#f8f8f6 35%,#f8f8f6 65%,#ecedea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecedea', endColorstr='#ecedea',GradientType=0 ); /* IE6-9 */
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.19);
+}
+
+.menu li {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li {
+    height: 54px;
+    opacity: 1;
+}
+
+#links02 dl {
+  margin: 0;
+  display: flex;
+  height: 52px;
+  padding: 0 6px 0 14px;
+  /* line-height: 24px; */
+  line-height: 54px;
+  border-bottom: 1px solid #dadada;
+}
+
+/* #links02 dt {
+  width: 172px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+} */
+
+#links02 dt {
+  display: flex;
+}
+
+#links02 dt span:nth-child(1) {
+  width: 120px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+#links02 dt span:nth-child(2) {
+  width: 44px;
+}
+
+.itemImg {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: 16px;
+  margin-right: 7px;
+  vertical-align: middle;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 8px rgba(0,0,0,.19);
+}
+
+#links02 .btn-cancel {
+  margin: 0;
+}
+
+#links02 .btn-cancel button {
+  width: 22px;
+  height: 22px;
+  padding: 0 0 0 4px;
+  background-color: #FFF;
+  border-radius: 50%;
+  border: 2px solid #c7c4c4;
+  top: -2px;
+  position: relative;
+  cursor: pointer;
+}
+
+#links02 .btn-cancel button span {
+  display: block;
+  width: 10px;
+  height: 14px;
+  color: #c7c4c4;
+  font-weight: bold;
+  /* position: relative; */
+  /* left: -2px; */
+}
+
+#links02 li:last-child {
+  text-align: center;
+}
+
+#itemSec {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 6px;
+}
+
+.eachproduct {
+  width: 224px;
+  margin: 0 6px 50px;
+}
+
+.thumbnail a:link {
+  display: block;
+  height: 224px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.thumbnail .stock {
+  display: none;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 20px 20px 0px 0px;
+  border-top: 1px solid #ccc;
+  -webkit-box-shadow: 0px -3px 2px rgba(0,0,0,.19);
+  box-shadow: 0px -3px 2px rgba(0,0,0,.19);
+  position: absolute;
+  bottom: 0;
+  opacity: 0.86;
+
+}
+
+.thumbnail .low {
+  display: block;
+  color: #FFF;
+  background-color: #0071e3;
+  text-shadow: 1px 1px 1px #053669;
+}
+
+.thumbnail .soldout {
+  display: block;
+  color: #FFF;
+  background-color: #ff2d55;
+  text-shadow: 1px 1px 1px #a51b36;
+}
+
+/* .producttext {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+} */
+
+.producttext {
+  display: -webkit-box;
+  width: 230px;
+  margin-bottom: 12px;
+  height: 46px;
+  padding: 0 10px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.itemPrice {
+  color: #f562a7;
+}
+
+.eachproduct dd {
+  margin: 0;
+  text-align: center;
+}
+
+.eachproduct dd select {
+  vertical-align: middle;
+}
+
+.itemDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  /* color: #fff; */
+  /* text-decoration: none; */
+}
+
+#noticeSec {
+  width: 998px;
+  height: 88px;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: #6d6f54;
+  background-image: url(notice.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+footer {
+  width: 998px;
+  margin: auto;
+  padding: 40px;
+  background-color: #ebebeb;
+  box-sizing: border-box;
+}
+
+footer ul {
+  margin: 0;
+}
+
+footer li {
+  margin-left: -2.2em;
+  font-size: 14px;
+  color: #666;
+  /* text-indent: -2em; */
+  list-style: none;
+}
+
+footer li::before {
+  content: '※';
+}

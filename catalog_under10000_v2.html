@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0044)https://www.dxlive.com/performer/mileageGift -->
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>DXLIVE GIFT NAVI</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="会員様に贈り物がしたいGIFT NAVI PROJECT 女性から男性に贈るギフト専用" name="description"/>
+<meta content="マイレージ,贈り物,GIFT,ギフト,プレゼント,マイル" name="keywords"/>
+<link href="https://www.dxlive.com/performer/logo.ico" rel="SHORTCUT ICON"/>
+<script src="./common.js" type="text/javascript"></script><script src="./saved_resource" type="text/javascript"></script>
+<link href="./mileageGift.css" rel="stylesheet" type="text/css"/>
+<link href="./mobile-mileageItems.css" media="only screen and (max-width: 767px)" rel="stylesheet"/>
+<!-- オーバーレイ用 -->
+<link href="./colorbox.css" rel="stylesheet" type="text/css"/>
+<script src="./jquery-2.2.1.min.js" type="text/javascript"></script>
+<script src="./jquery.colorbox.1.6.1.min.js" type="text/javascript"></script>
+<style>
+/* ===== カタログ装飾 ===== */
+.cancel-btn-styled {
+  background: white;
+  border: 2px solid #e0c0e8;
+  color: #9189e0;
+  border-radius: 30px;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0;
+  transition: background 0.2s;
+}
+.cancel-btn-styled:hover { background: #f8f0ff; }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+body {
+  background: linear-gradient(135deg, #fff0f6 0%, #fff8ff 50%, #f0f0ff 100%);
+  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 100vh;
+}
+
+/* ヘッダー装飾 */
+.contSec > h1, .pageTtl, h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #f469a2, #9189e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+/* カタログバナー */
+.catalog-banner {
+  background: linear-gradient(135deg, #f469a2 0%, #c084d1 50%, #9189e0 100%);
+  color: white;
+  text-align: center;
+  padding: 28px 20px 22px;
+  margin-bottom: 30px;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 6px 24px rgba(244,105,162,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.catalog-banner::before {
+  content: '';
+  position: absolute; top: 10px; left: 20px; font-size: 1.6rem; opacity: 0.6;
+}
+.catalog-banner::after {
+  content: '';
+  position: absolute; top: 10px; right: 20px; font-size: 1.6rem; opacity: 0.6;
+}
+.catalog-banner h2 {
+  font-size: 1.6rem; font-weight: 900; margin: 0 0 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.catalog-banner p {
+  font-size: 0.95rem; margin: 0; opacity: 0.9;
+}
+.member-name-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 4px 18px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* 商品グリッド */
+#itemSec .contSec, #itemSec > div {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  padding: 20px !important;
+}
+
+/* 商品カード */
+dl.eachproduct {
+  background: white !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 18px rgba(180,100,200,0.13) !important;
+  padding: 0 0 16px !important;
+  width: 200px !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  overflow: hidden !important;
+  border: 1.5px solid #f0d6f5 !important;
+  position: relative !important;
+}
+dl.eachproduct:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 10px 30px rgba(244,105,162,0.25) !important;
+}
+
+/* サムネイル */
+.thumbnail a.giftPic {
+  display: block !important;
+  width: 100% !important;
+  height: 160px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 0 !important;
+}
+
+/* 商品名 */
+dt.producttext {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #444 !important;
+  padding: 10px 12px 6px !important;
+  line-height: 1.4 !important;
+  min-height: 2.8em !important;
+}
+
+/* プレゼントボタン → この商品にする */
+.btn-gift-enable, .btn-gift-disable, div[class^="btn-gift"] {
+  background: linear-gradient(135deg, #f469a2, #c084d1) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 8px 0 !important;
+  width: 80% !important;
+  margin: 4px auto 0 !important;
+  text-align: center !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s !important;
+  display: block !important;
+}
+.btn-gift-enable:hover {
+  opacity: 0.85 !important;
+}
+
+/* 価格は非表示（データは残す） */
+dd.itemPrice {
+  display: none !important;
+}
+
+/* nav（残高・カテゴリ・カート）非表示 */
+nav {
+  display: none !important;
+}
+
+/* 通知モーダル */
+.notify-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.notify-overlay.active { display: flex; }
+.notify-modal {
+  background: white;
+  border-radius: 24px;
+  padding: 36px 32px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.notify-modal h3 {
+  font-size: 1.3rem; font-weight: 900; margin: 0 0 12px;
+  background: linear-gradient(90deg, #f469a2, #9189e0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.notify-modal .product-info {
+  background: linear-gradient(135deg, #fff0f6, #f0f0ff);
+  border-radius: 14px; padding: 16px; margin: 14px 0; font-size: 0.95rem;
+}
+.notify-modal .product-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+.notify-modal .product-mile { color: #9189e0; font-weight: 700; font-size: 0.9rem; }
+.notify-modal .confirm-btn {
+  background: linear-gradient(135deg, #f469a2, #9189e0);
+  color: white; border: none; border-radius: 30px;
+  padding: 12px 32px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; width: 100%; margin-top: 8px;
+  transition: opacity 0.2s;
+}
+.notify-modal .confirm-btn:hover { opacity: 0.85; }
+.notify-modal .cancel-btn {
+  background: none; border: none; color: #aaa;
+  font-size: 0.85rem; margin-top: 10px; cursor: pointer; display: block; width: 100%;
+}
+.notify-sent { color: #9189e0; font-size: 0.9rem; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="catalog-banner">
+<h2>RiyoSuenaga ゴールデンウィークプレゼント企画 ご当選者様用カタログ</h2>
+<p>好きな商品を選んで「この商品にする」を押してください。</p>
+<div class="member-name-tag" id="catalog-member-name">読み込み中...</div>
+</div>
+
+<div class="contSec">
+<!-- navigation -->
+<!-- navigation end -->
+<!-- Product list here -->
+<div id="itemSec"><style>
+
+.btn-gift-enable {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#fff;
+    background-color:#f469a2;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.btn-gift-enable:hover {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#fff;
+    background-color:#9189e0;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.btn-gift-disable {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#e8e8e8;
+    background-color:#CCCCCC;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+</style>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/729_1.jpg);" title="六花亭 ひとつ鍋">
+</a>
+</div>
+<dt class="producttext" id="productName729">六花亭 ひとつ鍋</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice729">5200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy729" name="729" onclick="updateShoppingCart(729)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/728_1.jpg);" title="かきたねセレクション">
+</a>
+</div>
+<dt class="producttext" id="productName728">かきたねセレクション</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice728">7900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy728" name="728" onclick="updateShoppingCart(728)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/727_1.jpg);" title="ドライフリットミニ ">
+</a>
+</div>
+<dt class="producttext" id="productName727">ドライフリットミニ </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice727">6800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy727" name="727" onclick="updateShoppingCart(727)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/726_1.jpg);" title="ナッツ＆チーズ　">
+</a>
+</div>
+<dt class="producttext" id="productName726">ナッツ＆チーズ　</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice726">5800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy726" name="726" onclick="updateShoppingCart(726)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/723_1.jpg);" title="フリアン 10個入 ">
+</a>
+</div>
+<dt class="producttext" id="productName723">フリアン 10個入 </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice723">7800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy723" name="723" onclick="updateShoppingCart(723)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/722_1.jpg);" title="[祇園辻利] ぎおんの里 ">
+</a>
+</div>
+<dt class="producttext" id="productName722">[祇園辻利] ぎおんの里 </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice722">5200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy722" name="722" onclick="updateShoppingCart(722)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/721_1.jpg);" title=" 焼きティラミス8個入り">
+</a>
+</div>
+<dt class="producttext" id="productName721"> 焼きティラミス8個入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice721">6000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy721" name="721" onclick="updateShoppingCart(721)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/717_1.jpg);" title="[ラブンス]男性用Krakenソフトでのびーるオナホール">
+</a>
+</div>
+<dt class="producttext" id="productName717">[ラブンス]男性用Krakenソフトでのびーるオナホール</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice717">2000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy717" name="717" onclick="updateShoppingCart(717)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/715_1.jpg);" title="菓匠もりん 苺モンブラン">
+</a>
+</div>
+<dt class="producttext" id="productName715">菓匠もりん 苺モンブラン</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice715">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy715" name="715" onclick="updateShoppingCart(715)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/694_1.jpg);" title="メープルバタークッキー">
+</a>
+</div>
+<dt class="producttext" id="productName694">メープルバタークッキー</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice694">6000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy694" name="694" onclick="updateShoppingCart(694)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/693_1.jpg);" title="バニラビーンズ ショーコラ ">
+</a>
+</div>
+<dt class="producttext" id="productName693">バニラビーンズ ショーコラ </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice693">8000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy693" name="693" onclick="updateShoppingCart(693)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/691_1.jpg);" title="シャーベット山梨シャインマスカット80gx20個">
+</a>
+</div>
+<dt class="producttext" id="productName691">シャーベット山梨シャインマスカット80gx20個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice691">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy691" name="691" onclick="updateShoppingCart(691)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/690_1.jpg);" title="シャーベット福岡あまおう 80gx20個">
+</a>
+</div>
+<dt class="producttext" id="productName690">シャーベット福岡あまおう 80gx20個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice690">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy690" name="690" onclick="updateShoppingCart(690)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/681_1.jpg);" title="生クリーム大福">
+</a>
+</div>
+<dt class="producttext" id="productName681">生クリーム大福</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice681">5600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy681" name="681" onclick="updateShoppingCart(681)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/635_1.jpg);" title="伊藤農園 オランジェット 1箱">
+</a>
+</div>
+<dt class="producttext" id="productName635">伊藤農園 オランジェット 1箱</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice635">5600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy635" name="635" onclick="updateShoppingCart(635)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/606_1.jpg);" title="JUCHHEIM バウムクーヘン">
+</a>
+</div>
+<dt class="producttext" id="productName606">JUCHHEIM バウムクーヘン</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice606">8300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy606" name="606" onclick="updateShoppingCart(606)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/605_1.jpg);" title="国産果汁のメロンソーダ 20缶">
+</a>
+</div>
+<dt class="producttext" id="productName605">国産果汁のメロンソーダ 20缶</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice605">5000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy605" name="605" onclick="updateShoppingCart(605)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/586_1.jpg);" title="アサヒスーパードライ生ジョッキ缶 340ml×24本">
+</a>
+</div>
+<dt class="producttext" id="productName586">アサヒスーパードライ生ジョッキ缶 340ml×24本</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice586">7500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy586" name="586" onclick="updateShoppingCart(586)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/585_1.jpg);" title="サントリー ジョッキ生 [ 350ml缶×24本 ] ">
+</a>
+</div>
+<dt class="producttext" id="productName585">サントリー ジョッキ生 [ 350ml缶×24本 ] </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice585">6500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy585" name="585" onclick="updateShoppingCart(585)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/579_1.jpg);" title="福岡　明太もつ鍋">
+</a>
+</div>
+<dt class="producttext" id="productName579">福岡　明太もつ鍋</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice579">9000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy579" name="579" onclick="updateShoppingCart(579)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/578_1.jpg);" title="大阪 たこ焼き">
+</a>
+</div>
+<dt class="producttext" id="productName578">大阪 たこ焼き</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice578">8300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy578" name="578" onclick="updateShoppingCart(578)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/576_1.jpg);" title="森彦の時間 レギュラーコーヒー ">
+</a>
+</div>
+<dt class="producttext" id="productName576">森彦の時間 レギュラーコーヒー </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice576">5600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy576" name="576" onclick="updateShoppingCart(576)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/557_1.jpg);" title="肉まん・餃子セット">
+</a>
+</div>
+<dt class="producttext" id="productName557">肉まん・餃子セット</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice557">7600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy557" name="557" onclick="updateShoppingCart(557)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/554_1.jpg);" title="キリマルラーメン１２種フルセット">
+</a>
+</div>
+<dt class="producttext" id="productName554">キリマルラーメン１２種フルセット</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice554">6000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy554" name="554" onclick="updateShoppingCart(554)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/552_1.jpg);" title="炭酸水でつくって楽しむビール">
+</a>
+</div>
+<dt class="producttext" id="productName552">炭酸水でつくって楽しむビール</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice552">8000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy552" name="552" onclick="updateShoppingCart(552)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/551_1.jpg);" title="糖質ゼロ・キリン一番搾り350ml×24本">
+</a>
+</div>
+<dt class="producttext" id="productName551">糖質ゼロ・キリン一番搾り350ml×24本</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice551">9800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy551" name="551" onclick="updateShoppingCart(551)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/549_1.jpg);" title="寿がきや 即席SUGAKIYAラーメン 111g×12個 ">
+</a>
+</div>
+<dt class="producttext" id="productName549">寿がきや 即席SUGAKIYAラーメン 111g×12個 </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice549">3800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy549" name="549" onclick="updateShoppingCart(549)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/525_1.jpg);" title="イタリアンロゼ ギフト">
+</a>
+</div>
+<dt class="producttext" id="productName525">イタリアンロゼ ギフト</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice525">4900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy525" name="525" onclick="updateShoppingCart(525)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/519_1.jpg);" title="ピエトロ スープ ギフト 10食 箱入り">
+</a>
+</div>
+<dt class="producttext" id="productName519">ピエトロ スープ ギフト 10食 箱入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice519">10000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy519" name="519" onclick="updateShoppingCart(519)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/510_1.jpg);" title="貝 セット">
+</a>
+</div>
+<dt class="producttext" id="productName510">貝 セット</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice510">7600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy510" name="510" onclick="updateShoppingCart(510)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/508_1.jpg);" title="新宿高野　フルーツチョコレート">
+</a>
+</div>
+<dt class="producttext" id="productName508">新宿高野　フルーツチョコレート</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice508">9000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy508" name="508" onclick="updateShoppingCart(508)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/507_1.jpg);" title="OGGIショコラ　デ　ショコラ">
+</a>
+</div>
+<dt class="producttext" id="productName507">OGGIショコラ　デ　ショコラ</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice507">7200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy507" name="507" onclick="updateShoppingCart(507)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/500_1.jpg);" title="乾杯Night　久保田 萬寿">
+</a>
+</div>
+<dt class="producttext" id="productName500">乾杯Night　久保田 萬寿</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice500">8300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy500" name="500" onclick="updateShoppingCart(500)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/499_1.jpg);" title="乾杯Night　獺祭">
+</a>
+</div>
+<dt class="producttext" id="productName499">乾杯Night　獺祭</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice499">9700</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy499" name="499" onclick="updateShoppingCart(499)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/498_1.jpg);" title="乾杯Night　ほろよい ">
+</a>
+</div>
+<dt class="producttext" id="productName498">乾杯Night　ほろよい </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice498">6000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy498" name="498" onclick="updateShoppingCart(498)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/497_1.jpg);" title="乾杯Night　のんある気分 ">
+</a>
+</div>
+<dt class="producttext" id="productName497">乾杯Night　のんある気分 </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice497">8600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy497" name="497" onclick="updateShoppingCart(497)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/481_1.jpg);" title="ヨックモック シガール 20本">
+</a>
+</div>
+<dt class="producttext" id="productName481">ヨックモック シガール 20本</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice481">6400</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy481" name="481" onclick="updateShoppingCart(481)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/436_1.jpg);" title=" ルタオドゥーブルフロマージュ ">
+</a>
+</div>
+<dt class="producttext" id="productName436"> ルタオドゥーブルフロマージュ </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice436">8300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy436" name="436" onclick="updateShoppingCart(436)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/435_1.jpg);" title="ルタオ ナイアガラ ショコラブラン フレ">
+</a>
+</div>
+<dt class="producttext" id="productName435">ルタオ ナイアガラ ショコラブラン フレ</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice435">6400</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy435" name="435" onclick="updateShoppingCart(435)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/434_1.jpg);" title="ルタオロイヤルモンターニュ 9個入り ">
+</a>
+</div>
+<dt class="producttext" id="productName434">ルタオロイヤルモンターニュ 9個入り </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice434">6900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy434" name="434" onclick="updateShoppingCart(434)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/433_1.jpg);" title="芋千本(濃紫) スイーツ 大福">
+</a>
+</div>
+<dt class="producttext" id="productName433">芋千本(濃紫) スイーツ 大福</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice433">6900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy433" name="433" onclick="updateShoppingCart(433)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/431_1.jpg);" title="マリトッツォ">
+</a>
+</div>
+<dt class="producttext" id="productName431">マリトッツォ</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice431">8500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy431" name="431" onclick="updateShoppingCart(431)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/430_1.jpg);" title="りくろーおじさんの焼きたてチーズケーキ">
+</a>
+</div>
+<dt class="producttext" id="productName430">りくろーおじさんの焼きたてチーズケーキ</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice430">5600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy430" name="430" onclick="updateShoppingCart(430)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/429_1.jpg);" title=" 紅ずわいがに赤身脚肉缶詰">
+</a>
+</div>
+<dt class="producttext" id="productName429"> 紅ずわいがに赤身脚肉缶詰</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice429">9700</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy429" name="429" onclick="updateShoppingCart(429)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/413_1.jpg);" title="北海道繁盛店対決ラーメン">
+</a>
+</div>
+<dt class="producttext" id="productName413">北海道繁盛店対決ラーメン</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice413">6900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy413" name="413" onclick="updateShoppingCart(413)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/412_1.jpg);" title="ブルーシール ギフト12 沖縄育ちのアイスクリーム専門店">
+</a>
+</div>
+<dt class="producttext" id="productName412">ブルーシール ギフト12 沖縄育ちのアイスクリーム専門店</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice412">7900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy412" name="412" onclick="updateShoppingCart(412)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/410_1.jpg);" title="ジェラート専門店 マリオジェラテリア">
+</a>
+</div>
+<dt class="producttext" id="productName410">ジェラート専門店 マリオジェラテリア</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice410">7600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy410" name="410" onclick="updateShoppingCart(410)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/391_1.jpg);" title="ハーゲンダッツアイスクリーム ×12個">
+</a>
+</div>
+<dt class="producttext" id="productName391">ハーゲンダッツアイスクリーム ×12個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice391">10000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy391" name="391" onclick="updateShoppingCart(391)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/387_1.jpg);" title="コロンバン フレンチパイ セレクション 20枚入">
+</a>
+</div>
+<dt class="producttext" id="productName387">コロンバン フレンチパイ セレクション 20枚入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice387">3500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy387" name="387" onclick="updateShoppingCart(387)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/386_1.jpg);" title="バターバトラー バターフィナンシェ4個入">
+</a>
+</div>
+<dt class="producttext" id="productName386">バターバトラー バターフィナンシェ4個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice386">6400</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy386" name="386" onclick="updateShoppingCart(386)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/357_1.jpg);" title="ヴィッラ サンディ プロセッコ DOCG ミレジマート">
+</a>
+</div>
+<dt class="producttext" id="productName357">ヴィッラ サンディ プロセッコ DOCG ミレジマート</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice357">9300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy357" name="357" onclick="updateShoppingCart(357)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/355_1.jpg);" title="純米大吟醸 八海山 雪室貯蔵三年 720ml">
+</a>
+</div>
+<dt class="producttext" id="productName355">純米大吟醸 八海山 雪室貯蔵三年 720ml</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice355">9700</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy355" name="355" onclick="updateShoppingCart(355)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/352_1.jpg);" title="獺祭(だっさい) おためしセット 180ml×3本">
+</a>
+</div>
+<dt class="producttext" id="productName352">獺祭(だっさい) おためしセット 180ml×3本</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice352">9700</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy352" name="352" onclick="updateShoppingCart(352)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/351_1.jpg);" title="フェリスタス 金箔入りスパークリングワイン">
+</a>
+</div>
+<dt class="producttext" id="productName351">フェリスタス 金箔入りスパークリングワイン</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice351">9700</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy351" name="351" onclick="updateShoppingCart(351)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/349_1.jpg);" title="上尾製菓 ねこもにゃか">
+</a>
+</div>
+<dt class="producttext" id="productName349">上尾製菓 ねこもにゃか</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice349">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy349" name="349" onclick="updateShoppingCart(349)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/348_1.jpg);" title="のんびりねこ茶ティーバッグ釣り猫付き">
+</a>
+</div>
+<dt class="producttext" id="productName348">のんびりねこ茶ティーバッグ釣り猫付き</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice348">8600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy348" name="348" onclick="updateShoppingCart(348)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/346_1.jpg);" title="井桁堂 和フィナンシェ 大 18個">
+</a>
+</div>
+<dt class="producttext" id="productName346">井桁堂 和フィナンシェ 大 18個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice346">7500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy346" name="346" onclick="updateShoppingCart(346)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/342_1.jpg);" title="博多風美庵 苺きらら10個入">
+</a>
+</div>
+<dt class="producttext" id="productName342">博多風美庵 苺きらら10個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice342">9300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy342" name="342" onclick="updateShoppingCart(342)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/340_1.jpg);" title="銀座千疋屋 銀座フルーツクーヘン　16個入">
+</a>
+</div>
+<dt class="producttext" id="productName340">銀座千疋屋 銀座フルーツクーヘン　16個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice340">10000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy340" name="340" onclick="updateShoppingCart(340)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/338_1.jpg);" title="京都　生八ツ橋　10個入">
+</a>
+</div>
+<dt class="producttext" id="productName338">京都　生八ツ橋　10個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice338">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy338" name="338" onclick="updateShoppingCart(338)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/337_1.jpg);" title="鎌倉 豊島屋　鳩サブレー 5枚入">
+</a>
+</div>
+<dt class="producttext" id="productName337">鎌倉 豊島屋　鳩サブレー 5枚入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice337">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy337" name="337" onclick="updateShoppingCart(337)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/336_1.jpg);" title="ふんわりもみじ饅頭 ３0個">
+</a>
+</div>
+<dt class="producttext" id="productName336">ふんわりもみじ饅頭 ３0個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice336">8600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy336" name="336" onclick="updateShoppingCart(336)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/335_1.jpg);" title="大阪　551豚まん　6個入り">
+</a>
+</div>
+<dt class="producttext" id="productName335">大阪　551豚まん　6個入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice335">9300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy335" name="335" onclick="updateShoppingCart(335)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/334_1.jpg);" title="桔梗信玄餅　10個入">
+</a>
+</div>
+<dt class="producttext" id="productName334">桔梗信玄餅　10個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice334">8600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy334" name="334" onclick="updateShoppingCart(334)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/333_1.jpg);" title="雪塩ちん○こう 48個入り">
+</a>
+</div>
+<dt class="producttext" id="productName333">雪塩ちん○こう 48個入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice333">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy333" name="333" onclick="updateShoppingCart(333)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/331_1.jpg);" title="東京ばな奈「見ぃつけたっ」8個入り">
+</a>
+</div>
+<dt class="producttext" id="productName331">東京ばな奈「見ぃつけたっ」8個入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice331">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy331" name="331" onclick="updateShoppingCart(331)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/329_1.jpg);" title="仙台　　萩の月10個入">
+</a>
+</div>
+<dt class="producttext" id="productName329">仙台　　萩の月10個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice329">9300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy329" name="329" onclick="updateShoppingCart(329)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/328_1.jpg);" title="六花亭マルセイバターサンド 16個入">
+</a>
+</div>
+<dt class="producttext" id="productName328">六花亭マルセイバターサンド 16個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice328">7000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy328" name="328" onclick="updateShoppingCart(328)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/327_1.jpg);" title="六花亭 ザ・マルセイ 15個入">
+</a>
+</div>
+<dt class="producttext" id="productName327">六花亭 ザ・マルセイ 15個入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice327">6300</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy327" name="327" onclick="updateShoppingCart(327)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/326_1.jpg);" title="煮魚 焼魚 西京焼 8種8切セット">
+</a>
+</div>
+<dt class="producttext" id="productName326">煮魚 焼魚 西京焼 8種8切セット</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice326">8900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy326" name="326" onclick="updateShoppingCart(326)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/257_1.jpg);" title="白い恋人　24枚　ホワイト＆ブラック">
+</a>
+</div>
+<dt class="producttext" id="productName257">白い恋人　24枚　ホワイト＆ブラック</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice257">7500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy257" name="257" onclick="updateShoppingCart(257)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/256_1.jpg);" title="じゃがポックル 10袋入り">
+</a>
+</div>
+<dt class="producttext" id="productName256">じゃがポックル 10袋入り</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice256">6200</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy256" name="256" onclick="updateShoppingCart(256)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/145_1.jpg);" title="サントリー オールフリー [ ノンアルコール 350ml×24本 ] ">
+</a>
+</div>
+<dt class="producttext" id="productName145">サントリー オールフリー [ ノンアルコール 350ml×24本 ] </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice145">8500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy145" name="145" onclick="updateShoppingCart(145)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/143_1.jpg);" title="クリアアサヒ 贅沢ゼロ [ ビール [ 350ml×24本 ] ]">
+</a>
+</div>
+<dt class="producttext" id="productName143">クリアアサヒ 贅沢ゼロ [ ビール [ 350ml×24本 ] ]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice143">9000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy143" name="143" onclick="updateShoppingCart(143)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/142_1.jpg);" title="アサヒ スーパードライ [ ビール 350ml×24本 ]">
+</a>
+</div>
+<dt class="producttext" id="productName142">アサヒ スーパードライ [ ビール 350ml×24本 ]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice142">9600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy142" name="142" onclick="updateShoppingCart(142)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/141_1.jpg);" title="サッポロ ヱビスビール [ 350ml×24本 ]">
+</a>
+</div>
+<dt class="producttext" id="productName141">サッポロ ヱビスビール [ 350ml×24本 ]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice141">9600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy141" name="141" onclick="updateShoppingCart(141)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/140_1.jpg);" title="サッポロ 生ビール 黒ラベル [ 350ml×24本 ]">
+</a>
+</div>
+<dt class="producttext" id="productName140">サッポロ 生ビール 黒ラベル [ 350ml×24本 ]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice140">9600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy140" name="140" onclick="updateShoppingCart(140)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/139_1.jpg);" title="キリン 一番搾り生ビール [ 350ml×24本 ]">
+</a>
+</div>
+<dt class="producttext" id="productName139">キリン 一番搾り生ビール [ 350ml×24本 ]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice139">9600</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy139" name="139" onclick="updateShoppingCart(139)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/138_1.jpg);" title="キリン本麒麟　[350ml×24本]">
+</a>
+</div>
+<dt class="producttext" id="productName138">キリン本麒麟　[350ml×24本]</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice138">9000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy138" name="138" onclick="updateShoppingCart(138)">プレゼントする</div></dd>
+</dl>
+</div>
+</div>
+<div id="noticeSec"></div>
+<footer>
+  【商品に関しての注意】
+  <ul>
+<li>場合により在庫がない場合がございます。同等の商品で代用させて頂く場合もございます。</li>
+<li>ご購入商品の返品・交換は基本的にできません。</li>
+<li>郵便局止めは受け付けておりません。</li>
+<li>日本国内のみの発送となります。</li>
+<li>不在で商品が返品となった場合、再送手数料がパフォーマー様のご負担になります。</li>
+<li>商品配送後、不在で返品となった場合、商品の再送が可能ではない際はマイルの返却ができません。</li>
+</ul>
+</footer>
+<script src="./jquery-3.3.1.min.js"></script>
+<script src="./jquery.cookie.js"></script>
+<script>
+
+/**
+ * mileage Store / Gift Products List
+ * RM8957  : CMS for PF Drug Store
+ * RM10435 : DX Gift: [new] JP PF > JP VW Gift (front)(reg & 910)
+ *
+ * Ajax call : /performer/mileageProductsList/" + categoryName + "/3"
+ *
+ * @param string  categoryName : categories for PF Drug Store
+ *                all        (6902,6904,6905,6906,6907) : 全て
+ *                fashion    6902 : ファッション
+ *                appliance  6904 : 家電
+ *                cosmetics  6905 : 化粧品 - 化粧品・ヘアケア (for display)
+ *                food       6906 : 食品・飲料
+ *                seasonally 6907 : 季節物 - その他 (for display)
+ * @param string  2nd Param : $present_location
+ *                4 :  vc_type.$present_location : /performer/mileageGift : JP PF→JP VW Gift (reg & 910)
+ *
+ * @return
+ *    mileage Store Products List : template/jp/performer/mileageStoreProducts.html
+ */
+
+$(function() {
+
+    var categoryName = 'all';
+    // Get products list
+    $.ajax({ url:  "/performer/mileageProductsList/" + categoryName + "/4"})
+    .done(function( data ) {
+        // display products list
+        $('#itemSec').html(data);
+
+        // Set style for which the category is selected
+        $(".productCategory").css('background-color','');
+        $('#category_'+categoryName).css('background-color','#FBEFFB');
+
+        // Set shopping cart If cookie(productsInfoGift) is exist
+        if ($.cookie('productsInfoGift')) {
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            for(var i = 1; i < cookieItems.length; i++) {
+                var cookieItemsInfo = cookieItems[i].split(':');
+                // append  product into shopping cart
+                var productName   = $("#productName"+cookieItemsInfo[0]).text();
+                appendShoppingCart(cookieItemsInfo[0], cookieItemsInfo[1], productName);
+                // set order count for each products
+                $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+            }
+            // Show shopping cart if cookie is exist when load the page
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // set Item count of shopping cart
+            $('#itemCount').text(cookieItems.length - 1);
+        } else {
+            $("#submitButton").remove();
+        }
+      })
+     .fail(function( data ) { console.log('Failed : product search'); });
+
+});
+
+// display categoy products when the menu is clicked
+function changeCategory(categoryName) {
+
+    $.ajax({ url:  "/performer/mileageProductsList/" + categoryName + "/4"})
+    .done(function( data ) {
+        // display products list
+        $('#itemSec').html(data);
+
+        // Set style for which the category is selected
+        $(".productCategory").css('background-color','');
+        $('#category_'+categoryName).css('background-color','#FBEFFB');　
+
+        // Set shopping cart If cookie(productsInfoGift) is exist
+        if ($.cookie('productsInfoGift')) {
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            for(var i = 1; i < cookieItems.length; i++) {
+                var cookieItemsInfo = cookieItems[i].split(':');
+                // set order count for each products
+                $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+            }
+            // Show shopping cart if cookie is exist when load the page
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // set Item count of shopping cart
+            $('#itemCount').text(cookieItems.length - 1);
+        }
+      })
+     .fail(function( data ) { console.log('Failed : product search'); });
+
+}
+
+function submitExchange() {
+
+    // Get cookie info
+    var productsInfoGift = $.cookie('productsInfoGift')
+    if (!productsInfoGift) {
+        alert('ショッピングカートに商品が入ってません');
+        return false;
+
+    } else {
+        // check mileage Balance and amount tatal of shopping cart
+        var mileageBalance = 38937.600;
+
+        var orderMileage = 0;
+        var cookieItems = productsInfoGift.split(',');
+        for(var i = 1; i < cookieItems.length; i++) {
+            var cookieItemsInfo = cookieItems[i].split(':');
+            orderMileage += $('#mileagePrice'+cookieItemsInfo[0]).text() * cookieItemsInfo[1];
+        }
+        console.log(mileageBalance);
+        console.log(orderMileage);
+        if (mileageBalance < orderMileage) {
+            alert('マイレージがたりません');
+            return false;
+        }
+
+        // present_id should be in the following format
+        // Since the cookie is in that format, set it as it is and send it to /performer/mileageExchange
+        // ["present_id"]=> string (eg.",995:3,996:5,948:1,942:3,994:2")
+        var inputProducts = '<input type="hidden" name="present_id" value="'+productsInfoGift+'">';
+        $('#formInput').append(inputProducts);
+        $('#mile_drugstore').submit();
+        return true;
+    }
+}
+
+function removeItem(productId) {
+
+    // remove Item from shopping cart
+    $("#cartItem"+productId).remove();
+
+    // set order count to 0 for target products
+    $('#toy'+productId).val(0);
+
+    // remove Item from cookie(productsInfoGift) -- set new cookie
+    if ($.cookie('productsInfoGift')) {
+        var productsInfoGift = '';
+        var cookieItems = $.cookie('productsInfoGift').split(',');
+        for(var i = 1; i < cookieItems.length; i++) {
+            if (cookieItems[i].indexOf(productId) == -1) {
+                productsInfoGift = productsInfoGift + ',' + cookieItems[i];
+            }
+        }
+        // set new cookie
+        $.cookie('productsInfoGift', productsInfoGift);
+        console.log($.cookie('productsInfoGift'));
+
+        // set Item count of shopping cart
+        var cookieItems = $.cookie('productsInfoGift').split(',');
+        $('#itemCount').text(cookieItems.length - 1);
+    }
+
+    // Hide shopping cart when empty in shopping cart
+    if (!$.cookie('productsInfoGift')) {
+        $("#submitButton").remove();
+        $('input[name="menu_bar02"]').prop('checked', false);
+    }
+}
+
+function updateShoppingCart(productId) {
+
+    console.log(productId);
+
+    // Get Product Name and order count
+    var productName   = $("#productName"+productId).text();
+    //var selectedCount = Number($("#toy"+productId).val());
+    var selectedCount = 1;
+
+    console.log(productName);
+    console.log(selectedCount);
+
+    if (productId) {
+        if (selectedCount == 0) {
+            // remove products from shopping cart
+            removeItem(productId);
+
+        } else if (selectedCount >= 1 && selectedCount <= 5) {
+
+            // Show shopping cart when added the items to shopping cart
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // Set shopping cart If cookie(productsInfoGift) is exist
+            var productsInfoGift = '';
+            var updateCountFlag = 0;
+            if ($.cookie('productsInfoGift')) {
+                var cookieItems = $.cookie('productsInfoGift').split(',');
+                for(var i = 1; i < cookieItems.length; i++) {
+                    var cookieItemsInfo = cookieItems[i].split(':');
+                    if (cookieItemsInfo[0] == productId) {
+                        // changed order count in shopping cart
+                        cookieItemsInfo[1] =  selectedCount;
+                        updateCountFlag = 1;
+                        $('#orderCount'+cookieItemsInfo[0]).text('（'+cookieItemsInfo[1]+'）');
+                    }
+                    cookieItems[i] = cookieItemsInfo.join(':');
+                    // set order count for each products
+                    $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+                }
+                productsInfoGift = cookieItems.join(',');
+            }
+
+            if (updateCountFlag != 1) {
+                productsInfoGift = productsInfoGift + ',' + productId + ':' + selectedCount;
+                // append product into shopping cart
+                appendShoppingCart(productId, selectedCount, productName);
+            }
+
+            $.cookie('productsInfoGift', productsInfoGift);
+            console.log($.cookie('productsInfoGift'));
+
+            // set Item count of shopping cart
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            $('#itemCount').text(cookieItems.length - 1);
+            // show submitButton when fiest item added
+            if (cookieItems.length == 2 && updateCountFlag != 1) {
+                $('#mile_drugstore').append('<li id="submitButton"><a href="javascript:void(0);" onClick="return submitExchange();">ご購入の手続き</a></li>');
+            }
+        }
+    }
+}
+
+function appendShoppingCart(productId, selectedCount, productName) {
+    var cartContents = '';
+    cartContents += '<li id="cartItem'+productId+'">';
+    cartContents += '  <dl class="prefade on bganime">';
+    cartContents += '    <div class="itemImg" style="background-image: url(//www.dxlive.com/gifth/img/products/'+productId+'_1.jpg);"></div>';
+    cartContents += '    <dt>';
+    cartContents += '      <span>'+productName+'</span>';
+    //cartContents += '      <span id="orderCount'+productId+'">（'+selectedCount+'）</span>';
+    cartContents += '      <span id="orderCount'+productId+'">&nbsp;</span>';
+    cartContents += '    </dt>';
+    cartContents += '    <dd class="btn-cancel">';
+    cartContents += '      <button onclick="removeItem('+productId+')" type="button" title="この商品をキャンセルする">';
+    cartContents += '        <span>X</span>';
+    cartContents += '      </button>';
+    cartContents += '    </dd>';
+    cartContents += ' </dl>';
+    cartContents += '</li>';
+    $('#cartList').append(cartContents);
+}
+
+</script>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"bbc4baedb48d44d189b6ec566a66c558","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" src="./v833ccba57c9e4d2798f2e76cebdd09a11778172276447"></script>
+<div id="cboxOverlay" style="display: none;"></div><div class="" id="colorbox" role="dialog" style="display: none;" tabindex="-1"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><deepl-input-controller translate="no"><template shadowrootmode="open"><link href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css" rel="stylesheet"/><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller>
+<div class="notify-overlay" id="notify-overlay" onclick="if(event.target===this)closeModal()">
+<div class="notify-modal">
+<h3>商品を選択</h3>
+<p style="color:#888;font-size:0.85rem;margin:0 0 4px"><span id="modal-member"></span> さんが選択：</p>
+<div class="product-info">
+<div class="product-name" id="modal-product-name"></div>
+<div class="product-mile" id="modal-product-mile"></div>
+</div>
+<p style="font-size:0.82rem;color:#aaa;margin-bottom:12px">この内容でりよちゃんに通知を送りますか？</p>
+<button class="confirm-btn" id="modal-confirm">送信する</button>
+<div class="notify-sent" id="modal-sent" style="display:none">送信しました。りよちゃんに届きました。</div>
+<button class="cancel-btn" onclick="closeModal()">キャンセル</button>
+</div>
+</div>
+<script>
+(function() {
+  // URLからメンバー名を取得
+  const params = new URLSearchParams(window.location.search);
+  const memberName = params.get('member') || '未設定';
+
+  // バナーにメンバー名を表示
+  document.addEventListener('DOMContentLoaded', function() {
+    var banner = document.getElementById('catalog-member-name');
+    if (banner) banner.textContent = memberName + ' さん';
+
+    // ボタンテキスト変更 & クリックイベント付与
+    document.querySelectorAll('.btn-gift-enable, .btn-gift-disable, div[id^="toy"]').forEach(function(btn) {
+      btn.textContent = 'この商品にする';
+      btn.onclick = null; // 元のonclick削除
+
+      btn.addEventListener('click', function() {
+        var dl = btn.closest('dl.eachproduct');
+        if (!dl) return;
+        var nameEl = dl.querySelector('dt.producttext');
+        var priceEl = dl.querySelector('dd.itemPrice span');
+        var productName = nameEl ? nameEl.textContent.trim() : '不明';
+        var productMile = priceEl ? priceEl.textContent.trim() : '不明';
+
+        // モーダル表示
+        document.getElementById('modal-product-name').textContent = productName;
+        document.getElementById('modal-product-mile').textContent = productMile + ' マイル';
+        document.getElementById('modal-step1').style.display = 'block';
+        document.getElementById('modal-step2').style.display = 'none';
+        document.getElementById('modal-sent').style.display = 'none';
+        document.getElementById('modal-confirm').style.display = 'block';
+        document.getElementById('notify-overlay').classList.add('active');
+
+        // 「はい」ボタン → Step2へ
+        document.getElementById('modal-yes').onclick = function() {
+          document.getElementById('modal-step1').style.display = 'none';
+          document.getElementById('modal-step2').style.display = 'block';
+          document.getElementById('modal-member').textContent = memberName;
+          document.getElementById('modal-product-name2').textContent = productName;
+          document.getElementById('modal-product-mile2').textContent = productMile + ' マイル';
+        };
+
+        // 送信ボタン
+        document.getElementById('modal-confirm').onclick = function() {
+          sendToGmail(memberName, productName, productMile);
+        };
+      });
+    });
+  });
+
+  window.closeModal = function() {
+    document.getElementById('notify-overlay').classList.remove('active');
+    document.getElementById('modal-step1').style.display = 'block';
+    document.getElementById('modal-step2').style.display = 'none';
+    document.getElementById('modal-sent').style.display = 'none';
+    document.getElementById('modal-confirm').style.display = 'block';
+  };
+
+  function sendToGmail(member, product, mile) {
+    // Google Forms経由でメール通知
+    var FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePJDO54EiJqlH1I-mIsBhyg2MxxQ363wNb4K4nmvx10HXHaQ/formResponse';
+    var body = 'メンバー: ' + member + '\n商品: ' + product + '\nマイル: ' + mile;
+
+    var formData = new FormData();
+    formData.append('entry.1718602552', member);
+    formData.append('entry.1729903009', product);
+    formData.append('entry.1886537318', mile + ' マイル');
+
+    fetch(FORM_ACTION, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(function() {
+      document.getElementById('modal-confirm').style.display = 'none';
+      document.getElementById('modal-sent').style.display = 'block';
+    }).catch(function() {
+      document.getElementById('modal-confirm').style.display = 'none';
+      document.getElementById('modal-sent').style.display = 'block';
+    });
+  }
+})();
+</script>
+</body></html>

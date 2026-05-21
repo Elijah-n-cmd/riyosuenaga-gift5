@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0044)https://www.dxlive.com/performer/mileageGift -->
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>DXLIVE GIFT NAVI</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="会員様に贈り物がしたいGIFT NAVI PROJECT 女性から男性に贈るギフト専用" name="description"/>
+<meta content="マイレージ,贈り物,GIFT,ギフト,プレゼント,マイル" name="keywords"/>
+<link href="https://www.dxlive.com/performer/logo.ico" rel="SHORTCUT ICON"/>
+<script src="./common.js" type="text/javascript"></script><script src="./saved_resource" type="text/javascript"></script>
+<link href="./mileageGift.css" rel="stylesheet" type="text/css"/>
+<link href="./mobile-mileageItems.css" media="only screen and (max-width: 767px)" rel="stylesheet"/>
+<!-- オーバーレイ用 -->
+<link href="./colorbox.css" rel="stylesheet" type="text/css"/>
+<script src="./jquery-2.2.1.min.js" type="text/javascript"></script>
+<script src="./jquery.colorbox.1.6.1.min.js" type="text/javascript"></script>
+<style>
+/* ===== カタログ装飾 ===== */
+.cancel-btn-styled {
+  background: white;
+  border: 2px solid #e0c0e8;
+  color: #9189e0;
+  border-radius: 30px;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0;
+  transition: background 0.2s;
+}
+.cancel-btn-styled:hover { background: #f8f0ff; }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+body {
+  background: linear-gradient(135deg, #fff0f6 0%, #fff8ff 50%, #f0f0ff 100%);
+  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 100vh;
+}
+
+/* ヘッダー装飾 */
+.contSec > h1, .pageTtl, h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #f469a2, #9189e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+/* カタログバナー */
+.catalog-banner {
+  background: linear-gradient(135deg, #f469a2 0%, #c084d1 50%, #9189e0 100%);
+  color: white;
+  text-align: center;
+  padding: 28px 20px 22px;
+  margin-bottom: 30px;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 6px 24px rgba(244,105,162,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.catalog-banner::before {
+  content: '';
+  position: absolute; top: 10px; left: 20px; font-size: 1.6rem; opacity: 0.6;
+}
+.catalog-banner::after {
+  content: '';
+  position: absolute; top: 10px; right: 20px; font-size: 1.6rem; opacity: 0.6;
+}
+.catalog-banner h2 {
+  font-size: 1.6rem; font-weight: 900; margin: 0 0 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.catalog-banner p {
+  font-size: 0.95rem; margin: 0; opacity: 0.9;
+}
+.member-name-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 4px 18px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* 商品グリッド */
+#itemSec .contSec, #itemSec > div {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  padding: 20px !important;
+}
+
+/* 商品カード */
+dl.eachproduct {
+  background: white !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 18px rgba(180,100,200,0.13) !important;
+  padding: 0 0 16px !important;
+  width: 200px !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  overflow: hidden !important;
+  border: 1.5px solid #f0d6f5 !important;
+  position: relative !important;
+}
+dl.eachproduct:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 10px 30px rgba(244,105,162,0.25) !important;
+}
+
+/* サムネイル */
+.thumbnail a.giftPic {
+  display: block !important;
+  width: 100% !important;
+  height: 160px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 0 !important;
+}
+
+/* 商品名 */
+dt.producttext {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #444 !important;
+  padding: 10px 12px 6px !important;
+  line-height: 1.4 !important;
+  min-height: 2.8em !important;
+}
+
+/* プレゼントボタン → この商品にする */
+.btn-gift-enable, .btn-gift-disable, div[class^="btn-gift"] {
+  background: linear-gradient(135deg, #f469a2, #c084d1) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 8px 0 !important;
+  width: 80% !important;
+  margin: 4px auto 0 !important;
+  text-align: center !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s !important;
+  display: block !important;
+}
+.btn-gift-enable:hover {
+  opacity: 0.85 !important;
+}
+
+/* 価格は非表示（データは残す） */
+dd.itemPrice {
+  display: none !important;
+}
+
+/* nav（残高・カテゴリ・カート）非表示 */
+nav {
+  display: none !important;
+}
+
+/* 通知モーダル */
+.notify-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.notify-overlay.active { display: flex; }
+.notify-modal {
+  background: white;
+  border-radius: 24px;
+  padding: 36px 32px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: popIn 0.3s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.notify-modal h3 {
+  font-size: 1.3rem; font-weight: 900; margin: 0 0 12px;
+  background: linear-gradient(90deg, #f469a2, #9189e0);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.notify-modal .product-info {
+  background: linear-gradient(135deg, #fff0f6, #f0f0ff);
+  border-radius: 14px; padding: 16px; margin: 14px 0; font-size: 0.95rem;
+}
+.notify-modal .product-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+.notify-modal .product-mile { color: #9189e0; font-weight: 700; font-size: 0.9rem; }
+.notify-modal .confirm-btn {
+  background: linear-gradient(135deg, #f469a2, #9189e0);
+  color: white; border: none; border-radius: 30px;
+  padding: 12px 32px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; width: 100%; margin-top: 8px;
+  transition: opacity 0.2s;
+}
+.notify-modal .confirm-btn:hover { opacity: 0.85; }
+.notify-modal .cancel-btn {
+  background: none; border: none; color: #aaa;
+  font-size: 0.85rem; margin-top: 10px; cursor: pointer; display: block; width: 100%;
+}
+.notify-sent { color: #9189e0; font-size: 0.9rem; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="catalog-banner">
+<h2>RiyoSuenaga ゴールデンウィークプレゼント企画 ご当選者様用カタログ</h2>
+<p>好きな商品を選んで「この商品にする」を押してください。</p>
+<div class="member-name-tag" id="catalog-member-name">読み込み中...</div>
+</div>
+
+<div class="contSec">
+<!-- navigation -->
+<!-- navigation end -->
+<!-- Product list here -->
+<div id="itemSec"><style>
+
+.btn-gift-enable {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#fff;
+    background-color:#f469a2;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.btn-gift-enable:hover {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#fff;
+    background-color:#9189e0;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.btn-gift-disable {
+    width:160px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:5px 0 5px;
+    color:#e8e8e8;
+    background-color:#CCCCCC;
+    border-radius:30px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+</style>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/717_1.jpg);" title="[ラブンス]男性用Krakenソフトでのびーるオナホール">
+</a>
+</div>
+<dt class="producttext" id="productName717">[ラブンス]男性用Krakenソフトでのびーるオナホール</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice717">2000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy717" name="717" onclick="updateShoppingCart(717)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/715_1.jpg);" title="菓匠もりん 苺モンブラン">
+</a>
+</div>
+<dt class="producttext" id="productName715">菓匠もりん 苺モンブラン</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice715">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy715" name="715" onclick="updateShoppingCart(715)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/691_1.jpg);" title="シャーベット山梨シャインマスカット80gx20個">
+</a>
+</div>
+<dt class="producttext" id="productName691">シャーベット山梨シャインマスカット80gx20個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice691">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy691" name="691" onclick="updateShoppingCart(691)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/690_1.jpg);" title="シャーベット福岡あまおう 80gx20個">
+</a>
+</div>
+<dt class="producttext" id="productName690">シャーベット福岡あまおう 80gx20個</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice690">4500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy690" name="690" onclick="updateShoppingCart(690)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/605_1.jpg);" title="国産果汁のメロンソーダ 20缶">
+</a>
+</div>
+<dt class="producttext" id="productName605">国産果汁のメロンソーダ 20缶</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice605">5000</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy605" name="605" onclick="updateShoppingCart(605)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/549_1.jpg);" title="寿がきや 即席SUGAKIYAラーメン 111g×12個 ">
+</a>
+</div>
+<dt class="producttext" id="productName549">寿がきや 即席SUGAKIYAラーメン 111g×12個 </dt>
+<dd class="itemPrice">価格：<span id="mileagePrice549">3800</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy549" name="549" onclick="updateShoppingCart(549)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/525_1.jpg);" title="イタリアンロゼ ギフト">
+</a>
+</div>
+<dt class="producttext" id="productName525">イタリアンロゼ ギフト</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice525">4900</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy525" name="525" onclick="updateShoppingCart(525)">プレゼントする</div></dd>
+</dl>
+<dl class="eachproduct remo_box_border_right">
+<div class="thumbnail">
+<a class="giftPic cboxElement" href="javascript:void(0);" rel="gallery" style="background-image: url(https://www.dxlive.com/gifth/img/products/387_1.jpg);" title="コロンバン フレンチパイ セレクション 20枚入">
+</a>
+</div>
+<dt class="producttext" id="productName387">コロンバン フレンチパイ セレクション 20枚入</dt>
+<dd class="itemPrice">価格：<span id="mileagePrice387">3500</span>マイル</dd>
+<dd><div class="btn-gift-enable" id="toy387" name="387" onclick="updateShoppingCart(387)">プレゼントする</div></dd>
+</dl>
+</div>
+</div>
+<div id="noticeSec"></div>
+<footer>
+  【商品に関しての注意】
+  <ul>
+<li>場合により在庫がない場合がございます。同等の商品で代用させて頂く場合もございます。</li>
+<li>ご購入商品の返品・交換は基本的にできません。</li>
+<li>郵便局止めは受け付けておりません。</li>
+<li>日本国内のみの発送となります。</li>
+<li>不在で商品が返品となった場合、再送手数料がパフォーマー様のご負担になります。</li>
+<li>商品配送後、不在で返品となった場合、商品の再送が可能ではない際はマイルの返却ができません。</li>
+</ul>
+</footer>
+<script src="./jquery-3.3.1.min.js"></script>
+<script src="./jquery.cookie.js"></script>
+<script>
+
+/**
+ * mileage Store / Gift Products List
+ * RM8957  : CMS for PF Drug Store
+ * RM10435 : DX Gift: [new] JP PF > JP VW Gift (front)(reg & 910)
+ *
+ * Ajax call : /performer/mileageProductsList/" + categoryName + "/3"
+ *
+ * @param string  categoryName : categories for PF Drug Store
+ *                all        (6902,6904,6905,6906,6907) : 全て
+ *                fashion    6902 : ファッション
+ *                appliance  6904 : 家電
+ *                cosmetics  6905 : 化粧品 - 化粧品・ヘアケア (for display)
+ *                food       6906 : 食品・飲料
+ *                seasonally 6907 : 季節物 - その他 (for display)
+ * @param string  2nd Param : $present_location
+ *                4 :  vc_type.$present_location : /performer/mileageGift : JP PF→JP VW Gift (reg & 910)
+ *
+ * @return
+ *    mileage Store Products List : template/jp/performer/mileageStoreProducts.html
+ */
+
+$(function() {
+
+    var categoryName = 'all';
+    // Get products list
+    $.ajax({ url:  "/performer/mileageProductsList/" + categoryName + "/4"})
+    .done(function( data ) {
+        // display products list
+        $('#itemSec').html(data);
+
+        // Set style for which the category is selected
+        $(".productCategory").css('background-color','');
+        $('#category_'+categoryName).css('background-color','#FBEFFB');
+
+        // Set shopping cart If cookie(productsInfoGift) is exist
+        if ($.cookie('productsInfoGift')) {
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            for(var i = 1; i < cookieItems.length; i++) {
+                var cookieItemsInfo = cookieItems[i].split(':');
+                // append  product into shopping cart
+                var productName   = $("#productName"+cookieItemsInfo[0]).text();
+                appendShoppingCart(cookieItemsInfo[0], cookieItemsInfo[1], productName);
+                // set order count for each products
+                $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+            }
+            // Show shopping cart if cookie is exist when load the page
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // set Item count of shopping cart
+            $('#itemCount').text(cookieItems.length - 1);
+        } else {
+            $("#submitButton").remove();
+        }
+      })
+     .fail(function( data ) { console.log('Failed : product search'); });
+
+});
+
+// display categoy products when the menu is clicked
+function changeCategory(categoryName) {
+
+    $.ajax({ url:  "/performer/mileageProductsList/" + categoryName + "/4"})
+    .done(function( data ) {
+        // display products list
+        $('#itemSec').html(data);
+
+        // Set style for which the category is selected
+        $(".productCategory").css('background-color','');
+        $('#category_'+categoryName).css('background-color','#FBEFFB');　
+
+        // Set shopping cart If cookie(productsInfoGift) is exist
+        if ($.cookie('productsInfoGift')) {
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            for(var i = 1; i < cookieItems.length; i++) {
+                var cookieItemsInfo = cookieItems[i].split(':');
+                // set order count for each products
+                $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+            }
+            // Show shopping cart if cookie is exist when load the page
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // set Item count of shopping cart
+            $('#itemCount').text(cookieItems.length - 1);
+        }
+      })
+     .fail(function( data ) { console.log('Failed : product search'); });
+
+}
+
+function submitExchange() {
+
+    // Get cookie info
+    var productsInfoGift = $.cookie('productsInfoGift')
+    if (!productsInfoGift) {
+        alert('ショッピングカートに商品が入ってません');
+        return false;
+
+    } else {
+        // check mileage Balance and amount tatal of shopping cart
+        var mileageBalance = 38937.600;
+
+        var orderMileage = 0;
+        var cookieItems = productsInfoGift.split(',');
+        for(var i = 1; i < cookieItems.length; i++) {
+            var cookieItemsInfo = cookieItems[i].split(':');
+            orderMileage += $('#mileagePrice'+cookieItemsInfo[0]).text() * cookieItemsInfo[1];
+        }
+        console.log(mileageBalance);
+        console.log(orderMileage);
+        if (mileageBalance < orderMileage) {
+            alert('マイレージがたりません');
+            return false;
+        }
+
+        // present_id should be in the following format
+        // Since the cookie is in that format, set it as it is and send it to /performer/mileageExchange
+        // ["present_id"]=> string (eg.",995:3,996:5,948:1,942:3,994:2")
+        var inputProducts = '<input type="hidden" name="present_id" value="'+productsInfoGift+'">';
+        $('#formInput').append(inputProducts);
+        $('#mile_drugstore').submit();
+        return true;
+    }
+}
+
+function removeItem(productId) {
+
+    // remove Item from shopping cart
+    $("#cartItem"+productId).remove();
+
+    // set order count to 0 for target products
+    $('#toy'+productId).val(0);
+
+    // remove Item from cookie(productsInfoGift) -- set new cookie
+    if ($.cookie('productsInfoGift')) {
+        var productsInfoGift = '';
+        var cookieItems = $.cookie('productsInfoGift').split(',');
+        for(var i = 1; i < cookieItems.length; i++) {
+            if (cookieItems[i].indexOf(productId) == -1) {
+                productsInfoGift = productsInfoGift + ',' + cookieItems[i];
+            }
+        }
+        // set new cookie
+        $.cookie('productsInfoGift', productsInfoGift);
+        console.log($.cookie('productsInfoGift'));
+
+        // set Item count of shopping cart
+        var cookieItems = $.cookie('productsInfoGift').split(',');
+        $('#itemCount').text(cookieItems.length - 1);
+    }
+
+    // Hide shopping cart when empty in shopping cart
+    if (!$.cookie('productsInfoGift')) {
+        $("#submitButton").remove();
+        $('input[name="menu_bar02"]').prop('checked', false);
+    }
+}
+
+function updateShoppingCart(productId) {
+
+    console.log(productId);
+
+    // Get Product Name and order count
+    var productName   = $("#productName"+productId).text();
+    //var selectedCount = Number($("#toy"+productId).val());
+    var selectedCount = 1;
+
+    console.log(productName);
+    console.log(selectedCount);
+
+    if (productId) {
+        if (selectedCount == 0) {
+            // remove products from shopping cart
+            removeItem(productId);
+
+        } else if (selectedCount >= 1 && selectedCount <= 5) {
+
+            // Show shopping cart when added the items to shopping cart
+            $('input[name="menu_bar02"]').prop('checked', true);
+
+            // Set shopping cart If cookie(productsInfoGift) is exist
+            var productsInfoGift = '';
+            var updateCountFlag = 0;
+            if ($.cookie('productsInfoGift')) {
+                var cookieItems = $.cookie('productsInfoGift').split(',');
+                for(var i = 1; i < cookieItems.length; i++) {
+                    var cookieItemsInfo = cookieItems[i].split(':');
+                    if (cookieItemsInfo[0] == productId) {
+                        // changed order count in shopping cart
+                        cookieItemsInfo[1] =  selectedCount;
+                        updateCountFlag = 1;
+                        $('#orderCount'+cookieItemsInfo[0]).text('（'+cookieItemsInfo[1]+'）');
+                    }
+                    cookieItems[i] = cookieItemsInfo.join(':');
+                    // set order count for each products
+                    $('#toy'+cookieItemsInfo[0]).val(cookieItemsInfo[1]);
+                }
+                productsInfoGift = cookieItems.join(',');
+            }
+
+            if (updateCountFlag != 1) {
+                productsInfoGift = productsInfoGift + ',' + productId + ':' + selectedCount;
+                // append product into shopping cart
+                appendShoppingCart(productId, selectedCount, productName);
+            }
+
+            $.cookie('productsInfoGift', productsInfoGift);
+            console.log($.cookie('productsInfoGift'));
+
+            // set Item count of shopping cart
+            var cookieItems = $.cookie('productsInfoGift').split(',');
+            $('#itemCount').text(cookieItems.length - 1);
+            // show submitButton when fiest item added
+            if (cookieItems.length == 2 && updateCountFlag != 1) {
+                $('#mile_drugstore').append('<li id="submitButton"><a href="javascript:void(0);" onClick="return submitExchange();">ご購入の手続き</a></li>');
+            }
+        }
+    }
+}
+
+function appendShoppingCart(productId, selectedCount, productName) {
+    var cartContents = '';
+    cartContents += '<li id="cartItem'+productId+'">';
+    cartContents += '  <dl class="prefade on bganime">';
+    cartContents += '    <div class="itemImg" style="background-image: url(//www.dxlive.com/gifth/img/products/'+productId+'_1.jpg);"></div>';
+    cartContents += '    <dt>';
+    cartContents += '      <span>'+productName+'</span>';
+    //cartContents += '      <span id="orderCount'+productId+'">（'+selectedCount+'）</span>';
+    cartContents += '      <span id="orderCount'+productId+'">&nbsp;</span>';
+    cartContents += '    </dt>';
+    cartContents += '    <dd class="btn-cancel">';
+    cartContents += '      <button onclick="removeItem('+productId+')" type="button" title="この商品をキャンセルする">';
+    cartContents += '        <span>X</span>';
+    cartContents += '      </button>';
+    cartContents += '    </dd>';
+    cartContents += ' </dl>';
+    cartContents += '</li>';
+    $('#cartList').append(cartContents);
+}
+
+</script>
+<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"bbc4baedb48d44d189b6ec566a66c558","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" src="./v833ccba57c9e4d2798f2e76cebdd09a11778172276447"></script>
+<div id="cboxOverlay" style="display: none;"></div><div class="" id="colorbox" role="dialog" style="display: none;" tabindex="-1"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><deepl-input-controller translate="no"><template shadowrootmode="open"><link href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css" rel="stylesheet"/><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller>
+<div class="notify-overlay" id="notify-overlay" onclick="if(event.target===this)closeModal()">
+<div class="notify-modal">
+<h3>商品を選択</h3>
+<p style="color:#888;font-size:0.85rem;margin:0 0 4px"><span id="modal-member"></span> さんが選択：</p>
+<div class="product-info">
+<div class="product-name" id="modal-product-name"></div>
+<div class="product-mile" id="modal-product-mile"></div>
+</div>
+<p style="font-size:0.82rem;color:#aaa;margin-bottom:12px">この内容でりよちゃんに通知を送りますか？</p>
+<button class="confirm-btn" id="modal-confirm">送信する</button>
+<div class="notify-sent" id="modal-sent" style="display:none">送信しました。りよちゃんに届きました。</div>
+<button class="cancel-btn" onclick="closeModal()">キャンセル</button>
+</div>
+</div>
+<script>
+(function() {
+  // URLからメンバー名を取得
+  const params = new URLSearchParams(window.location.search);
+  const memberName = params.get('member') || '未設定';
+
+  // バナーにメンバー名を表示
+  document.addEventListener('DOMContentLoaded', function() {
+    var banner = document.getElementById('catalog-member-name');
+    if (banner) banner.textContent = memberName + ' さん';
+
+    // ボタンテキスト変更 & クリックイベント付与
+    document.querySelectorAll('.btn-gift-enable, .btn-gift-disable, div[id^="toy"]').forEach(function(btn) {
+      btn.textContent = 'この商品にする';
+      btn.onclick = null; // 元のonclick削除
+
+      btn.addEventListener('click', function() {
+        var dl = btn.closest('dl.eachproduct');
+        if (!dl) return;
+        var nameEl = dl.querySelector('dt.producttext');
+        var priceEl = dl.querySelector('dd.itemPrice span');
+        var productName = nameEl ? nameEl.textContent.trim() : '不明';
+        var productMile = priceEl ? priceEl.textContent.trim() : '不明';
+
+        // モーダル表示
+        document.getElementById('modal-product-name').textContent = productName;
+        document.getElementById('modal-product-mile').textContent = productMile + ' マイル';
+        document.getElementById('modal-step1').style.display = 'block';
+        document.getElementById('modal-step2').style.display = 'none';
+        document.getElementById('modal-sent').style.display = 'none';
+        document.getElementById('modal-confirm').style.display = 'block';
+        document.getElementById('notify-overlay').classList.add('active');
+
+        // 「はい」ボタン → Step2へ
+        document.getElementById('modal-yes').onclick = function() {
+          document.getElementById('modal-step1').style.display = 'none';
+          document.getElementById('modal-step2').style.display = 'block';
+          document.getElementById('modal-member').textContent = memberName;
+          document.getElementById('modal-product-name2').textContent = productName;
+          document.getElementById('modal-product-mile2').textContent = productMile + ' マイル';
+        };
+
+        // 送信ボタン
+        document.getElementById('modal-confirm').onclick = function() {
+          sendToGmail(memberName, productName, productMile);
+        };
+      });
+    });
+  });
+
+  window.closeModal = function() {
+    document.getElementById('notify-overlay').classList.remove('active');
+    document.getElementById('modal-step1').style.display = 'block';
+    document.getElementById('modal-step2').style.display = 'none';
+    document.getElementById('modal-sent').style.display = 'none';
+    document.getElementById('modal-confirm').style.display = 'block';
+  };
+
+  function sendToGmail(member, product, mile) {
+    // Google Forms経由でメール通知
+    var FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePJDO54EiJqlH1I-mIsBhyg2MxxQ363wNb4K4nmvx10HXHaQ/formResponse';
+    var body = 'メンバー: ' + member + '\n商品: ' + product + '\nマイル: ' + mile;
+
+    var formData = new FormData();
+    formData.append('entry.1718602552', member);
+    formData.append('entry.1729903009', product);
+    formData.append('entry.1886537318', mile + ' マイル');
+
+    fetch(FORM_ACTION, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    }).then(function() {
+      document.getElementById('modal-confirm').style.display = 'none';
+      document.getElementById('modal-sent').style.display = 'block';
+    }).catch(function() {
+      document.getElementById('modal-confirm').style.display = 'none';
+      document.getElementById('modal-sent').style.display = 'block';
+    });
+  }
+})();
+</script>
+</body></html>

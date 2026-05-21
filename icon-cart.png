@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//JP" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7 ]><html lang="ja" class="ie ie7 newLayout"><![endif]--> 
+<!--[if IE 8 ]><html lang="ja" class="ie ie8 newLayout"><![endif]--> 
+<!--[if IE 9 ]><html lang="ja" class="ie ie9 newLayout"><![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja" class="newLayout"><!--<![endif]-->  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META HTTP-EQUIV="refresh" CONTENT="190;">
+<meta name="robots" content="index,follow">
+<title>女の子専用ログインページ</title>
+<meta name="Description" content="ライブチャットDXLIVEの女の子専用ログインページです。" />
+<meta name="Author" content="d2pass.com D2Pass" />
+<meta name="keywords" content="Ｄ２Ｐａｓｓ,Ｄ２パス,D2Pass, D2P" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,text/html">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<style type="text/css">
+/**reset & basic typography**/
+/*
+	CSS Reset: Special Thanks to Eric Meyer
+*/
+/* 
+	http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+/*
+	modified by wito2009 Fri Jul 12, 2013
+	table is:
+	margin:0; -> margin:0 auto;
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+table { margin:0 auto;}
+/*TABLE, td, th, tbody { vertical-align:top !important; padding:0; line-height:100% }*/
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {/*memo: we still need cellpadding="0"*/
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+b { font-weight:bold}
+
+/*basic typography Special Thanks to Jeffrey Zeldman http://www.zeldman.com/
+below partially based on http://www.zeldman.com/wp-content/themes/zeldman-v2/style.css?0418120943*/
+
+
+
+
+body{font-size: 12px;/*Older IE*/
+font-size: 0.750em;/*Relatively Modern Browser*/
+font-size: 0.750rem;/*Modern Browser , including phones and tablet*/
+border:0;width:auto;background-color:#fff;margin:0;padding:0;
+}
+
+body,div,td,th,p,li,h1,h2,h3,h4,h5,h6 {
+	font-family:Meiryo UI,'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック','MS PGothic',Arial,Helvetica,sans-serif;
+}
+
+.bold {font-weight:900;}
+.size10 {font-size:10px;}
+.size12 {font-size:12px;}
+.size14 {font-size:14px;}
+.size16 {font-size:16px;}
+
+.pink {color:#F0C;}
+.white {color:#FFF;}
+.brown {color:#600;}
+.black {color:#000;}
+
+.grey {color:#333;}
+
+.lightGrey {color:#CCC;}
+
+.yellow {color:#FFE99C;}
+
+.cyan {color:#0FF;}
+
+.gold {color:#FFE083;}
+
+a:link,a:active,a:visited {color:#f09;text-decoration:none;}
+a:hover {color:#f9c;text-decoration:underline;}
+.gl_fade {-webkit-transition:opacity 0.2s linear;-moz-transition:opacity 0.2s linear;-o-transition:opacity 0.2s linear;transition:opacity 0.2s linear;}
+
+/*designs*/
+body {text-align:center}
+#mainWrap { padding-top:16px;}
+#formBoxOuter { max-width:520px; margin:0 auto; text-align:left;padding:0;}
+
+
+#imgHolder{
+  margin-bottom:12px;
+  max-width:520px;
+  height:auto;
+}
+
+#imgHolder img{
+  max-width:100%;
+  height:auto;
+}
+
+#formBox_left { float:left; max-width:100%;}
+#formBox_right { float:right; max-width:auto;}
+.inputbox{height:38px; width:98%;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;border:1px solid #dddddd;text-indent:8px; margin-top:2px;margin-bottom:2px;transition: box-shadow 0.3s, border 0.3s;ime-mode: disabled;}	
+.inputbox:focus{border:1px solid #ccc;box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);}	
+
+.btn-login{
+	margin-top:10px;
+	height:48px;
+	width:100%;
+	font-weight:bold;
+	font-size:16px;
+	padding:4px 10px 4px;font-weight:normal;-webkit-border-radius:4px!important;-moz-border-radius:4px!important;border-radius:4px!important;
+	color: #fff!important; border:1px solid #ff6bb5!important; background: #ff87c3!important;
+	background: -moz-linear-gradient(top,  #ff87c3 0%, #ff6bb5 100%)!important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff87c3), color-stop(100%,#ff6bb5))!important;
+	background: -webkit-linear-gradient(top,  #ff87c3 0%,#ff6bb5 100%)!important;
+	background: -o-linear-gradient(top,  #ff87c3 0%,#ff6bb5 100%)!important;
+	background: -ms-linear-gradient(top,  #ff87c3 0%,#ff6bb5 100%)!important;
+	background: linear-gradient(to bottom,  #ff87c3 0%,#ff6bb5 100%)!important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff87c3', endColorstr='#ff6bb5',GradientType=0 )!important;
+	}
+	
+.btn-login:hover{
+	cursor:pointer;	
+	color: #fff!important; border:1px solid #ff6bb5!important; background: #fe74b9!important;
+	background: -moz-linear-gradient(top,  #fe74b9 0%, #ff6bb5 100%)!important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fe74b9), color-stop(100%,#ff6bb5))!important;
+	background: -webkit-linear-gradient(top,  #fe74b9 0%,#ff6bb5 100%)!important;
+	background: -o-linear-gradient(top,  #fe74b9 0%,#ff6bb5 100%)!important;
+	background: -ms-linear-gradient(top,  #fe74b9 0%,#ff6bb5 100%)!important;
+	background: linear-gradient(to bottom,  #fe74b9 0%,#ff6bb5 100%)!important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe74b9', endColorstr='#ff6bb5',GradientType=0 )!important;	
+	}		
+
+.btn-pf-signup{
+	margin-top:10px;
+	height:48px;
+	width:100%;
+	font-weight:bold;
+	font-size:16px;
+	font-weight:normal;-webkit-border-radius:4px!important;-moz-border-radius:4px!important;border-radius:4px!important;
+	color: #fff!important;
+	background: #0071e3;
+  display: inline-block;
+  line-height: 45px;
+  text-align: center;
+  vertical-align: middle;
+	}
+	
+.pf_row { margin-bottom:8px;}
+.pf_label h4 { margin-bottom:4px; font-size:14px; line-height:14px;}
+.pf_submit:hover { -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    opacity: 0.6 }
+.pf_row p { margin-bottom:8px; line-height:160%;}
+.pf_note { /*color: #F03*/}
+.fr_banner {width:198px; height:165px; margin-bottom:8px;}
+.pf_warning {color: #DD0000; font-size: 14px; font-weight: bold;}
+.pf_text1 { text-align:center; margin-bottom:2px; color: #F36;}
+/*in case we want to go for resposive*/
+/*eventually I would like to move on to rem for responsive trigger,,,,but for now px*/
+@media only screen and (max-width: 540px) {/*smart phone landscape*/
+#formBoxOuter {padding:0 2%;}
+}
+@media only screen and (min-width: 768px) {/*tablet and pc*/
+
+}
+@media only screen and (min-width: 1024px) {/*pc*/
+
+}
+/*
+ micro clear fix, based on
+ http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+.cf:before, 
+.clearfix:before,
+.cf:after, 
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after, clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+ 
+.cf, .clearfix {
+    *zoom: 1;
+}
+
+</style>
+<script type="text/javascript" src="https://images.d2pass.com/images/js/cookie.js"></script>
+</head>
+
+<body onload="document.login_form.FORM_USER.focus()">
+<div id="mainWrap">
+	<div id="formBoxOuter" class="cf">
+		<div id="imgHolder">
+			<img src="https://images.d2pass.com/images/vchatsites/dxlive/header.jpg" alt="女の子専用ログインページ / Performer Only Login">
+		<!--/#imgHolder-->
+		</div>
+		
+		
+		
+		<div id="formBox_left">
+			<form name="login_form" id="form1" method="post" action="/n15/">
+			<!--form name="login_form" id="form1" method="post" action="/n15/" _lpchecked="1"-->
+				<fieldset>
+					
+					
+					
+					<div class="pf_row">
+						<label class="pf_label"><h4>パーフォーマー名：</h4></label>
+						<!--Username:-->
+						<input class="inputbox" id="username" size="34" name="FORM_USER" value="">
+					</div>
+					<div class="pf_row">
+						<label class="pf_label"><h4>パスワード：</h4></label>
+						<!--Password:-->
+						<input class="inputbox" id="passwd" type="password" size="34" value="" name="FORM_PASSWD">
+					</div>
+					<div class="pf_row">
+						<!--Remember my ID on this computer-->
+						<input type="checkbox" value="y" name="remember_login"> 次回からIDの入力を省略 / Remember my login ID 
+					</div>
+					
+					
+					<div class="pf_row">
+						<INPUT TYPE="HIDDEN" NAME="V" VALUE='1'>
+                        <INPUT TYPE="HIDDEN" NAME="l" VALUE='Y-Y-WlBDJrsjxR36Jjcy.MdHIngKxL5lJ-5NxLo4xLxsJ9d41-U4O6UiIRtKOHoKOqszxu5Vx-.cJ-5sWjs6JjDN2jeZYX3KJl1y.HSi.H13OHh-OqF3I62D2kelxMoDxken2H2V.lhKIMhH.lhjOH13IqhKxr23'>
+                        <INPUT TYPE="HIDDEN" NAME="EQS" VALUE='(none)'>
+						<input class="btn-login" type="submit" onclick="javascript:remember_me();" value="ログイン/Login" name="login_btn">
+					</div>
+					
+					<div class="pf_row">
+						<p class="pf_note">					
+							※「Caps Lock」がオンになっていると、パスワードが正しく認識されません。オフになっているかご確認のうえご入力下さい。
+						</p>
+						<p>
+							パフォーマー名・パスワードを忘れた方は<a href="https://pw.allbrightinformation.com" target="_blank">こちら</a>		
+						</p>
+					</div>
+					
+				</fieldset>
+			<!--/#form1-->
+			</form>
+		<!--/#formBox_left-->
+		</div>
+		
+		<div id="formBox_right">
+			
+                        <!--Temporary removed banner RT#118884-->
+                        <!--
+			<div class="fr_banner">
+				<div class="pf_row f12 pf_text1">◆◇↓未登録の方はこちら↓◇◆</div>
+				<a href="" target="_blank">
+					<img src="bn_register.gif" width="198" height="165" alt="登録がまだの方はこちらから">
+				</a>
+			</div>
+                        -->
+
+			<!--friend referal banner-->
+			<!--when we prepare friend referal page, we would like to uncoment this section-->
+			<!--
+			<div class="fr_banner">
+				
+				<a href="" target="_blank">
+					<img src="./img/bn_friend.gif" width="198" height="165" alt="お友達を紹介して1万円の報酬ゲット!">
+				</a>
+			</div>
+			-->
+		<!--/#formBox_right-->	
+		</div>
+			
+			
+	<!--/#formBoxOuter-->
+	</div>
+	<div id="btmBox">
+		<div class="pf_row">
+		<p>
+			<a href="http://www.dxlive.com/usc2257.html" target="_blank">18 U.S.C 2257 Record-Keeping Requirements Compliance Statement</a>
+		</p>
+		<p>
+			Copyright &copy; <script language="JavaScript" type="text/javascript"> var Myd =new Date(); var year=Myd.getFullYear(); document.write(year); document.close; </script> <strong>D2Pass</strong>.com
+		</p>
+	
+	</div>
+<!--/#mainWrap-->
+</div>
+<script language="JavaScript" type="text/javascript">
+var dateObj    = new Date();
+dateObj.setFullYear(dateObj.getFullYear() + 1);
+var cookieDobj = new hmsCookie('r_login_dxlive_performer',dateObj.toUTCString());
+cookieDobj.get();
+if (cookieDobj.args.u) {
+  document.login_form.FORM_USER.value = cookieDobj.args.u;
+  document.login_form.remember_login.checked = true;
+}
+
+function remember_me() {
+ if ( document.login_form.remember_login.checked ) {
+   var dateObj    = new Date();
+   dateObj.setFullYear(dateObj.getFullYear() + 1);
+   var cookieDobj = new hmsCookie('r_login_dxlive_performer',dateObj.toUTCString());
+   cookieDobj.add('u',document.login_form.FORM_USER.value);
+   cookieDobj.set();
+ } else {
+   var dateObj    = new Date();
+   dateObj.setFullYear(dateObj.getFullYear() - 1);
+   var cobj= new hmsCookie('r_login_dxlive_performer',dateObj.toUTCString());
+   cobj.add('u','');
+   cobj.set();
+ }
+}
+</script>
+</body>
+</html>
+
+
+      
